@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "186040889060",
+    "project_id": "medteem-3be56",
+    "storage_bucket": "medteem-3be56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186040889060:android:dbb5bf04ff9fe1e07e86f1",
+        "android_client_info": {
+          "package_name": "proftcode.medteem.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk0PmlEpzhyBEo2eYYu4xidz12UlCjtlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
