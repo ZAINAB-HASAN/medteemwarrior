@@ -1,10 +1,14 @@
+name: "Build & Release Medteem APK"
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-name: "Build & Release Medteem APK"
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build & Release
@@ -32,8 +36,7 @@ jobs:
       - name: Cache Flutter Dependencies
         uses: actions/cache@v3
         with:
-          path: |
-            ~/.pub-cache
+          path: ~/.pub-cache
           key: ${{ runner.os }}-pub-cache
 
       # 5. Install dependencies
@@ -46,6 +49,7 @@ jobs:
 
       # 7. Upload APK to GitHub Releases
       - name: Create Release
+        if: github.event_name == 'push'
         uses: ncipollo/release-action@v1
         with:
           artifacts: |
@@ -55,4 +59,3 @@ jobs:
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
-# pull request on main master
